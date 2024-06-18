@@ -77,5 +77,11 @@ ul {
   list-style: none;
 }
 
-
-
+#character-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+li {
+box-shadow: 1px 1px 1px #000;
+}
