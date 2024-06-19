@@ -78,10 +78,13 @@ ul {
 }
 
 #character-list {
-  display: flex;
+ display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  justify-content: center;
+  gap: 15px;
 }
+
 li {
-box-shadow: 1px 1px 1px #000;
+box-shadow: 2px 2px 2px #000;
 }
+
