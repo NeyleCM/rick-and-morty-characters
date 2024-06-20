@@ -23,11 +23,11 @@ btnPrev.addEventListener('click', () =>{
 
    // FETCH
 
-function getPersonajes(callback) {
+function getPersonajes(datos) {
 const resultados = fetch(`https://rickandmortyapi.com/api/character/?page=${numero}`);
 resultados
 .then(response => response.json())
-    .then(data => callback(data))
+    .then(data => datos(data))//callback(data))
         .catch(error => console.error('Error en los datos', error))
 }
 
@@ -35,7 +35,7 @@ resultados
 const listaPersonajes = (data) => {
 vistaPersonajes.innerHTML = '';
     data.results.forEach(personaje => {
- const contenedor = document.getElementById('character-list').innerHTML += 
+document.getElementById('character-list').innerHTML += 
  `<li class='personajesTarjeta'>
 <img src=${personaje.image} 
 alt=${personaje.name}/>
@@ -46,3 +46,32 @@ alt=${personaje.name}/>
 }
 
 getPersonajes(listaPersonajes);
+
+// DATA
+
+/*
+fetch('https://rickandmortyapi.com/api/character/?page=1")
+ .then(response => response.json())
+ .then(data => {
+    const characters = data.results
+    characters.forEach(character =x {
+    const template =  
+    `<li class='personajesTarjeta'>
+<img src=${personaje.image} 
+alt=${personaje.name}/>
+<h2><span>Nombre: </span>${personaje.name}</h2>
+<p><span>Especie: </span>${personaje.species}</p></li>`;
+
+listCharacterUL.innerHTML += template
+});
+
+});
+
+ const const listCharacterUL = document.getElementById('character-list')
+// console.log(listCharacterUL)
+
+
+
+
+*/
+
